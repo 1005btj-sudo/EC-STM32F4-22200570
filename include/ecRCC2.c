@@ -35,7 +35,6 @@ void RCC_HSI_init() {
 
 // EXERCISE !!
 void RCC_HSE_init() { 
-	// [TODO] Your Code Goes Here !!!!!
 }
 
 

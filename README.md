@@ -2997,9 +2997,6 @@ Modified         : 10-26-2026
 Language/ver     : C++ in VS Code
 
 Description      : PWM Library. Distributed to Students for PreLAB Timer Interrupt & PWM
-*          PWM library - exercise version.
-*          Fill in every  "YOUR CODE GOES HERE"  and every  "____"  blank
-*          in ecPWM2_student.c .  This header needs no editing.
 
 /----------------------------------------------------------------*/
 
@@ -3149,7 +3146,7 @@ void PWM_init_config(PinName_t pinName, uint32_t usec){
 	//  AF1 for TIM1,TIM2     AF2 for TIM3,TIM4
 	if((TIMx == TIM1)||(TIMx == TIM2))		afNum = 1;	// AF1
 	else if(TIMx== TIM3 || TIMx == TIM4)	afNum = 2;	// AF2
-	// You can add more  for TIM5 to TIM11, if necessary [YOUR CODE GOES HERE!!]		
+	// You can add more  for TIM5 to TIM11, if necessary
 
 
 	// Set AFR register for the pin
@@ -3429,7 +3426,6 @@ void PWM_pinmap(PinName_t pinName, TIM_TypeDef **TIMx, int *chN)
       }
    }
 	 // TIM5, 9, 11 needs to be added, if used.
-	// [YOUR CODE GOES HERE!!] if necessary
 }
 ```
 

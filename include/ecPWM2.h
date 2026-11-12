@@ -6,9 +6,6 @@ Modified         : 10-26-2026
 Language/ver     : C++ in VS Code
 
 Description      : PWM Library. Distributed to Students for PreLAB Timer Interrupt & PWM
-*          PWM library - exercise version.
-*          Fill in every  "YOUR CODE GOES HERE"  and every  "____"  blank
-*          in ecPWM2_student.c .  This header needs no editing.
 
 /----------------------------------------------------------------*/
 

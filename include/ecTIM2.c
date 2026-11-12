@@ -7,7 +7,6 @@ Language/ver     : C++ in VS Code
 
 Description      : Timer Library. Distributed to Students for PreLAB Timer Interrupt & PWM
 
-				Search for [YOUR CODE GOES HERE !!!!]  and fill in the code.
 /----------------------------------------------------------------*/
 
 #include "ecTIM2.h"
@@ -16,7 +15,6 @@ Description      : Timer Library. Distributed to Students for PreLAB Timer Inter
 /*						EXERCISE                             */
 ////////////////////////////////////////////////////////////////
 /*
-// Search for [YOUR CODE GOES HERE !!!!]  and fill in the code.
 // Exercises are in these functions.
 void TIM_init(TIM_TypeDef* TIMx, uint32_t msec); 
 void TIM_init_us(TIM_TypeDef* TIMx, uint32_t usec); 
