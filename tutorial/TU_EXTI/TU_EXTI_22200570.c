@@ -1,0 +1,55 @@
+/*----------------------------------------------------------------\
+@ Embedded Controller by Young-Keun Kim - Handong Global University
+Author           : Lee Jae Yong (22200570)
+Created          : 05-03-2021
+Modified         : 09-28-2026
+Language/ver     : C++ in VS Code
+
+Description      : Tutorial - External Interrupt (PreLAB: EXTI, Exercise 2)
+                   SW2 (PA_4) toggles LED0 by EXTI4 while main() blinks LED7 at 1 s
+/----------------------------------------------------------------*/
+
+#include "ecRCC2.h"
+#include "ecGPIO2.h"
+#include "ecSysTick2.h"
+#include "ecEXTI2.h"
+
+#define LED0_PIN   PB_12 		//EVAL board JKIT LED0
+#define LED7_PIN   PC_3 		//EVAL board JKIT LED7
+#define SW2_PIN    PA_4			//EVAL board JKIT SW2
+
+
+// Initialiization 
+void setup(void)
+{
+		RCC_PLL_init();                 // System Clock = 84MHz
+		SysTick_init();                 // SysTick Timer Initialization
+		// Initialize GPIOB_12 for Output
+		GPIO_init(LED0_PIN, OUTPUT);    // LED0 for EVAL board	
+		GPIO_init(LED7_PIN, OUTPUT);    // LED7 for EVAL board
+		
+		// Initialize GPIOA_4 for Input Button
+		GPIO_init(SW2_PIN, INPUT);  // INPUT for EVAL board
+		GPIO_pupd(SW2_PIN, EC_PU);  // PULL-UP for EVAL board
+		
+		// Initialize EXTI PA_4
+		EXTI_init(SW2_PIN, FALL, 10);		
+}
+
+// MAIN  ----------------------------------------
+int main(void) {
+	setup();
+	while (1){
+        GPIO_write(LED7_PIN, HIGH);
+        delay_ms(1000);
+        GPIO_write(LED7_PIN, LOW);
+        delay_ms(1000);
+    }
+}
+
+void EXTI4_IRQHandler(void) {
+	if (is_pending_EXTI(SW2_PIN)) {   
+		led_toggle(LED0_PIN);
+		clear_pending_EXTI(SW2_PIN);
+	}
+}
